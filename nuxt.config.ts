@@ -7,6 +7,13 @@ export default defineNuxtConfig({
   // Enables the development server to be discoverable by other devices for mobile development
   devServer: { host: '0.0.0.0'},
   vite: {
+    // vue: {
+    //   script: {
+    //     globalTypeFiles: [
+    //       './src/types/tiledata.d.ts'
+    //     ]
+    //   }
+    // },
     // Better support for Tauri CLI output
     clearScreen: false,
     // Enable environment variables
