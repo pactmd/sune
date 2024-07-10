@@ -1,29 +1,33 @@
 <template>
     <div class="tile-container">
-        <Tile :level="tiledata.level" :horizontal="tiledata.horizontal"></Tile>
+        <div class="tile-area">
+            <Tile :depth="0" :tiledata="tiledata"></Tile>
+        </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import type { TileData } from '~/types/tiledata';
+// import type { TileData } from '~/types/tiledata';
 
 const tiledata: TileData = reactive({
-    level: 0,
-    horizontal: [
-        {
-            level: 1,
-            horizontal: [
-                {
-                    level: 2,
-                    horizontal: [
-                        {
-                            level: 3,
-                            horizontal: []
-                        }
-                    ]
-                }
-            ]
-        }
+    id: "id1",
+    children: [
+        [
+            {
+                id: "id2",
+                children: []
+            },
+            {
+                id: "id3",
+                children: []
+            }
+        ],
+        [
+            {
+                id: "id4",
+                children: []
+            }
+        ]
     ]
 })
 </script>
@@ -38,5 +42,12 @@ const tiledata: TileData = reactive({
     padding: 40px;
     width: 100%;
     height: 100%;
+}
+
+.tile-area {
+    width: 100%;
+    height: 100%;
+    border: 5px solid black;
+    border-radius: 20px;
 }
 </style>

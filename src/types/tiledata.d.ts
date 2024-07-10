@@ -1,5 +1,4 @@
-export declare interface TileData {
-    level: number,
-    horizontal?: TileData[],
-    vertical?: TileData[],
+declare interface TileData {
+    id: string,
+    children: TileData[][]
 }
