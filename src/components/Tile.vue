@@ -40,12 +40,18 @@ function randomColor() {
 }
 
 .tile-split {
+    cursor: ew-resize;
     width: 10px;
     height: 100%;
     background-color: black;
 }
 
+.tile-split:hover {
+    background-color: lightblue;
+}
+
 .tile-split.column {
+    cursor: ns-resize;
     width: 100%;
     height: 10px;
 }
