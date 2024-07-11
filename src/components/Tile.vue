@@ -1,8 +1,8 @@
 <template>
-    <div class="tile-wrapper">
-        <div v-for="(_, columnIndex) in props.tiledata.children" :key="columnIndex" :style="{backgroundColor: randomColor()}" class="tile column">
-            <div v-for="(row, rowIndex) in props.tiledata.children[columnIndex]" :key="rowIndex" :style="{backgroundColor: randomColor()}" class="tile row">
-                <Tile :depth="props.depth + 1" :tiledata="row"></Tile>
+    <div :style="{backgroundColor: randomColor()}" class="tile-wrapper">
+        <div v-for="(_, columnIndex) in props.tiledata.children" :key="columnIndex" class="tile column">
+            <div v-for="(row, rowIndex) in props.tiledata.children![columnIndex]" :key="rowIndex" class="tile row">
+                <Tile :tiledata="row"></Tile>
             </div>
         </div>
     </div>
@@ -10,7 +10,6 @@
 
 <script setup lang="ts">
 const props = defineProps<{
-    depth: number,
     tiledata: TileData,
 }>()
 
@@ -32,9 +31,12 @@ function randomColor() {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    box-sizing: border-box;
     width: 100%;
     height: 100%;
-    gap: 40px;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 20px;
 }
 
 .tile {
@@ -42,8 +44,7 @@ function randomColor() {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    padding: 40px;
-    gap: 40px;
+    gap: 20px;
     width: 100%;
     height: 100%;
     border-radius: 20px;

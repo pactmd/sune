@@ -1,4 +1,3 @@
 declare interface TileData {
-    id: string,
-    children: TileData[][]
+    children?: TileData[][]
 }
