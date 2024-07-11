@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-07-11',
-  
+
   srcDir: 'src',
 
   // (optional) Enable the Nuxt devtools
@@ -13,13 +13,6 @@ export default defineNuxtConfig({
   devServer: { host: '0.0.0.0'},
 
   vite: {
-    // vue: {
-    //   script: {
-    //     globalTypeFiles: [
-    //       './src/types/tiledata.d.ts'
-    //     ]
-    //   }
-    // },
     // Better support for Tauri CLI output
     clearScreen: false,
     // Enable environment variables
