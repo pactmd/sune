@@ -1,5 +1,6 @@
 <template>
     <div :style="{backgroundColor: randomColor()}" class="tile-wrapper">
+        <p v-if="!props.tiledata.children">Editable</p>
         <div v-for="(_, columnIndex) in props.tiledata.children" :key="columnIndex" class="tile column">
             <div v-for="(row, rowIndex) in props.tiledata.children![columnIndex]" :key="rowIndex" class="tile row">
                 <Tile :tiledata="row"></Tile>
