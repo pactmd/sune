@@ -1,3 +1,6 @@
+declare type Direction = "row" | "column"
+
 declare interface TileData {
-    children?: TileData[][]
+    direction?: Direction,
+    children?: TileData[]
 }

@@ -1,15 +1,14 @@
 <template>
-    <div :style="{backgroundColor: randomColor()}" class="tile-wrapper">
+    <div :style="{ flexDirection: props.tiledata.direction, backgroundColor: randomColor() }" class="tile">
         <p v-if="!props.tiledata.children">Editable</p>
-        <div v-for="(_, columnIndex) in props.tiledata.children" :key="columnIndex" class="tile column">
-            <div v-for="(row, rowIndex) in props.tiledata.children![columnIndex]" :key="rowIndex" class="tile row">
-                <Tile :tiledata="row"></Tile>
-            </div>
+        <div v-for="(tile, index) in props.tiledata.children" :key="index" class="tile-content">
+            <Tile :tiledata="tile"> </Tile>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
+
 const props = defineProps<{
     tiledata: TileData,
 }>()
@@ -27,11 +26,10 @@ function randomColor() {
 </script>
 
 <style scoped>
-.tile-wrapper {
+.tile {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     box-sizing: border-box;
     width: 100%;
     height: 100%;
@@ -40,12 +38,11 @@ function randomColor() {
     border-radius: 20px;
 }
 
-.tile {
+.tile-content {
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    gap: 20px;
     width: 100%;
     height: 100%;
     border-radius: 20px;

@@ -7,16 +7,12 @@
 <script setup lang="ts">
 
 const tiledata: TileData = reactive({
-    children: [
-        [{}, {}],
-        [{
-            children: [
-                [{}, {}],
-                [{}]
-            ]
-        }]
-    ]
+    direction: "column",
+    children: [{
+        children: [{}, {}]
+    }, {}]
 })
+
 </script>
 
 <style scoped>
