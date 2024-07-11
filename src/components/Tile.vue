@@ -1,9 +1,10 @@
 <template>
     <div :style="{ flexDirection: props.tiledata.direction, backgroundColor: randomColor() }" class="tile">
         <p v-if="!props.tiledata.children">Editable</p>
-        <div v-for="(tile, index) in props.tiledata.children" :key="index" class="tile-content">
+        <template v-for="(tile, index) in props.tiledata.children">
             <Tile :tiledata="tile"> </Tile>
-        </div>
+            <div v-if="index < props.tiledata.children!.length - 1" class="tile-split" :class="props.tiledata.direction"></div>
+        </template>
     </div>
 </template>
 
@@ -38,13 +39,14 @@ function randomColor() {
     border-radius: 20px;
 }
 
-.tile-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    width: 100%;
+.tile-split {
+    width: 10px;
     height: 100%;
-    border-radius: 20px;
+    background-color: black;
+}
+
+.tile-split.column {
+    width: 100%;
+    height: 10px;
 }
 </style>
