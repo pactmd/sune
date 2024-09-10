@@ -1,14 +1,17 @@
 <template>
-    <div :style="{ flexDirection: props.tiledata.direction, backgroundColor: randomColor() }" class="tile">
-        <p v-if="!props.tiledata.children">Editable</p>
-        <template v-for="(tile, index) in props.tiledata.children">
-            <Tile :tiledata="tile"> </Tile>
-            <div v-if="index < props.tiledata.children!.length - 1" class="tile-split" :class="props.tiledata.direction"></div>
-        </template>
-    </div>
+    <splitpanes class="default-theme" :horizontal="props.tiledata.horizontal">
+        <pane v-if="!props.tiledata.children?.length" :style="{backgroundColor: randomColor()}">Editable</pane>
+        <pane v-for="(tile, index) in props.tiledata.children" :style="{backgroundColor: randomColor()}">
+            <div class="padder">
+                <Tile :tiledata="tile"></Tile>
+            </div>
+        </pane>
+    </splitpanes>
 </template>
 
 <script setup lang="ts">
+import { Splitpanes, Pane } from 'splitpanes';
+import 'splitpanes/dist/splitpanes.css'
 
 const props = defineProps<{
     tiledata: TileData,
@@ -27,6 +30,29 @@ function randomColor() {
 </script>
 
 <style scoped>
+/* .splitpanes {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.splitpanes__pane {
+    padding: 10px;
+    box-sizing: border-box;
+} */
+
+.splitpanes__pane {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.padder {
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
 .tile {
     display: flex;
     justify-content: center;
@@ -40,7 +66,7 @@ function randomColor() {
 }
 
 .tile-split {
-    cursor: ew-resize;
+    
     width: 10px;
     height: 100%;
     background-color: black;

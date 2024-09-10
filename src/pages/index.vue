@@ -6,18 +6,25 @@
 
 <script setup lang="ts">
 
+// const tiledata: TileData = reactive({
+//     horizontal: true,
+//     children: [{
+//         children: [{}, {}]
+//     }, {}]
+// })
+
 const tiledata: TileData = reactive({
-    direction: "column",
     children: [{
+        horizontal: true,
         children: [{}, {}]
-    }, {}]
+    }, {}, {}]
 })
 
 </script>
 
 <style scoped>
 .tile-container {
-    background-color: green;
+    background-color: lightblue;
     display: flex;
     align-items: center;
     justify-content: center;
