@@ -5,14 +5,6 @@
 </template>
 
 <script setup lang="ts">
-
-// const tiledata: TileData = reactive({
-//     horizontal: true,
-//     children: [{
-//         children: [{}, {}]
-//     }, {}]
-// })
-
 const tiledata: TileData = reactive({
     children: [{
         horizontal: true,

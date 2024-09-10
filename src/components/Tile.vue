@@ -30,16 +30,6 @@ function randomColor() {
 </script>
 
 <style scoped>
-/* .splitpanes {
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.splitpanes__pane {
-    padding: 10px;
-    box-sizing: border-box;
-} */
-
 .splitpanes__pane {
     display: flex;
     justify-content: center;
@@ -51,34 +41,5 @@ function randomColor() {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-}
-
-.tile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    gap: 20px;
-    border-radius: 20px;
-}
-
-.tile-split {
-    
-    width: 10px;
-    height: 100%;
-    background-color: black;
-}
-
-.tile-split:hover {
-    background-color: lightblue;
-}
-
-.tile-split.column {
-    cursor: ns-resize;
-    width: 100%;
-    height: 10px;
 }
 </style>
