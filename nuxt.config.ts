@@ -1,11 +1,17 @@
 export default defineNuxtConfig({
+  compatibilityDate: '2024-07-11',
+
   srcDir: 'src',
+
   // (optional) Enable the Nuxt devtools
   devtools: { enabled: true },
+
   // Enable SSG
   ssr: false,
+
   // Enables the development server to be discoverable by other devices for mobile development
   devServer: { host: '0.0.0.0'},
+
   vite: {
     // Better support for Tauri CLI output
     clearScreen: false,
