@@ -11,6 +11,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@vite-pwa/nuxt": "^0.10.5",
     "nuxt": "^3.13.2",
     "splitpanes": "^3.1.5",
     "vue": "latest",
