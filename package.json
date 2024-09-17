@@ -1,5 +1,6 @@
 {
   "name": "sune",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,13 +11,22 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@vite-pwa/assets-generator": "^0.2.6",
+    "@vite-pwa/nuxt": "^0.10.5",
+    "nuxt": "^3.13.2",
+    "vite-plugin-pwa": "^0.20.5",
     "splitpanes": "^3.1.5",
-    "vue": "^3.4.27",
-    "vue-router": "^4.3.2"
+    "vue": "latest",
+    "workbox-build": "^7.1.0",
+    "workbox-window": "^7.1.0"
   },
   "devDependencies": {
     "@types/splitpanes": "^2.2.6",
-    "nuxt": "^3.13.1",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.3",
+    "vue-tsc": "^2.1.4"
+  },
+  "overrides": {
+    "sharp": "0.32.6",
+    "sharp-ico": "0.1.5"
   }
 }
