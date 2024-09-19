@@ -1,28 +1,28 @@
 <template>
-    <span class="avatar" :class="avatarStatus">
-        D
+    <span class="avatar" :class="userStatus">
+        L
     </span>
 </template>
 
 <script setup lang="ts">
-const avatarStatus = ref<AvatarStatus>("online");
+const userStatus = ref<userStatus>("offline");
 </script>
 
 <style scoped>
 .avatar {
     display: flex;
-    justify-content: center;
     width: 36px;
     height: 36px;
     line-height: 36px;
+    justify-content: center;
     border-radius: 100%;
 }
 
-.avatar .online {
-    background-color: lightgreen;
+.avatar.offline {
+    background-color: lightcoral;
 }
 
-.avatar .offline {
-    background-color: lightcoral;
+.avatar.online {
+    background-color: lightgreen;
 }
 </style>

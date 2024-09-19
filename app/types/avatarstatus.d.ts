@@ -1,1 +1,0 @@
-declare type AvatarStatus = "online" | "offline";

@@ -1,0 +1,1 @@
+declare type userStatus = "offline" | "online"
