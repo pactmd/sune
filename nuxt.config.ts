@@ -4,47 +4,30 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4
   },
-
   devtools: { enabled: true },
 
-  nitro: {
-    prerender: {
-      routes: ['/'],
+  // Enable SSG
+  ssr: false,
+  // Enables the development server to be discoverable by other devices for mobile development
+  devServer: { host: '0.0.0.0' },
+  vite: {
+    // Better support for Tauri CLI output
+    clearScreen: false,
+    // Enable environment variables
+    // Additional environment variables can be found at
+    // https://v2.tauri.app/reference/environment-variables/
+    envPrefix: ['VITE_', 'TAURI_'],
+    server: {
+      // Tauri requires a consistent port
+      strictPort: true,
+      hmr: {
+        // Use websocket for mobile hot reloading
+        protocol: 'ws',
+        // Make sure it's available on the network
+        host: '0.0.0.0',
+        // Use a specific port for hmr
+        port: 5183,
+      },
     },
-  },
-
-  modules: ['@vite-pwa/nuxt'],
-  
-  pwa: {
-    registerType: 'prompt',
-    injectRegister: false,
-
-    pwaAssets: {
-      disabled: false,
-      config: true,
-    },
-
-    manifest: {
-      name: 'Sune',
-      short_name: 'Sune',
-      description: 'Description of Sune',
-      theme_color: '#000000',
-    },
-
-    workbox: {
-      globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
-      cleanupOutdatedCaches: true,
-      clientsClaim: true,
-    },
-
-    devOptions: {
-      enabled: true,
-      suppressWarnings: false,
-      navigateFallback: '/',
-      navigateFallbackAllowlist: [/^\/$/],
-      type: 'module',
-    },
-
-    registerWebManifestInRouteRules: true,
   },
 });
