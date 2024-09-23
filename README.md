@@ -24,12 +24,15 @@ This is [Sune](https://forgottenrealms.fandom.com/wiki/Sune), PACT's offline-fir
 
 #### Installing
 
-Sune is awailable as a PWA, see [browser compatibility](https://en.wikipedia.org/wiki/Progressive_web_app#Browser_support).
+Pre-built packages for Windows, macOS and Linux are found on the [Releases](https://github.com/pactmd/sune/releases) page.
+
+#### Developing Requirements
+
+All dependencies for developing should be covered by [Tauri](https://v2.tauri.app/) in their [Prerequisites Page](https://v2.tauri.app/start/prerequisites/).
 
 #### Build
 
 Clone the repository and run on the root folder:
 ```
-npm install
-npm run dev
+cargo tauri dev
 ```
